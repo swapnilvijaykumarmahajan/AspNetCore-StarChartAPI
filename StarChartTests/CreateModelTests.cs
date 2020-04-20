@@ -91,24 +91,24 @@ namespace StarChartTests
             Assert.True(property.PropertyType == typeof(TimeSpan), "A `public` property `OrbitalPeriod` was found in `CelestialObject`, but was not of type `TimeSpan`.");
         }
 
-        [Fact(DisplayName = "Add CelestialObject to ApplicationDbContext @add-celestialobject-to-applicationdbcontext")]
-        public void AddCelestialObjectToApplicationDbContextTest()
-        {
-            var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Data" + Path.DirectorySeparatorChar + "ApplicationDbContext.cs";
-            Assert.True(File.Exists(filePath), "`ApplicationDbContext.cs` was not found in the `Data` directory, did you remove or rename it?");
+        //[Fact(DisplayName = "Add CelestialObject to ApplicationDbContext @add-celestialobject-to-applicationdbcontext")]
+        //public void AddCelestialObjectToApplicationDbContextTest()
+        //{
+        //    var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Data" + Path.DirectorySeparatorChar + "ApplicationDbContext.cs";
+        //    Assert.True(File.Exists(filePath), "`ApplicationDbContext.cs` was not found in the `Data` directory, did you remove or rename it?");
 
-            filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
-            Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
+        //    filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
+        //    Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
-            Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
+        //    var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
+        //    Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
 
-            var context = TestHelpers.GetUserType("StarChart.Data.ApplicationDbContext");
-            Assert.True(model != null, "A `public` class `ApplicationDbContext` was not found in the `StarChart.Data` namespace.");
+        //    var context = TestHelpers.GetUserType("StarChart.Data.ApplicationDbContext");
+        //    Assert.True(model != null, "A `public` class `ApplicationDbContext` was not found in the `StarChart.Data` namespace.");
 
-            var property = context.GetProperty("CelestialObjects");
-            Assert.True(property != null, "A `public` property `CelestialObjects` was not found in the `ApplicationDbContext` class.");
-            Assert.True(property.PropertyType.AssemblyQualifiedName.Contains("DbSet") && property.PropertyType.AssemblyQualifiedName.Contains("CelestialObject"), "A `public` property `CelestialObjects` was found in `ApplicationDbContext`, but was not of type `DbSet<CelestialObject>`.");
-        }
+        //    var property = context.GetProperty("CelestialObjects");
+        //    Assert.True(property != null, "A `public` property `CelestialObjects` was not found in the `ApplicationDbContext` class.");
+        //    Assert.True(property.PropertyType.AssemblyQualifiedName.Contains("DbSet") && property.PropertyType.AssemblyQualifiedName.Contains("CelestialObject"), "A `public` property `CelestialObjects` was found in `ApplicationDbContext`, but was not of type `DbSet<CelestialObject>`.");
+        //}
     }
 }
